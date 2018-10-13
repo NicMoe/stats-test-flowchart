@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "calibri";
+/*  src:url("fonts/wfplsiu.eot");
+  src:url("fonts/wfplsiu.eot?#iefix") format("embedded-opentype"),
+    url("fonts/wfplsiu.woff") format("woff"),
+    url("fonts/wfplsiu.ttf") format("truetype"),
+    url("fonts/wfplsiu.svg#wfplsiu") format("svg"); */
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "calibri" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "calibri" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .icon-facebook:before {
+  content: "\61";
+}
+.icon-google-plus:before {
+  content: "\62";
+}
+.icon-twitter:before {
+  content: "\63";
+}
+.icon-reddit:before {
+  content: "\64";
+}
+.icon-linkedin:before {
+  content: "\65";
+} */
+
+html, body {
+  height: 100%;
+}
+
+body, .btn-default {
+  color: #ddd;
+  background-color: #BF5700;
+}
+
+a {
+  color: #ddd;
+}
+
+.wrapper {
+  min-height: 100vh;
+  margin: 0 auto -40px;
+}
+
+.main {
+  margin-top: 10vh;
+  margin-bottom: 7vh;
+}
+
+@media screen and (min-width: 641px) {
+  .main {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+  }
+}
+
+.main a {
+  text-decoration: underline;
+}
+
+.btn-default {
+  background: #BF5700;
+}
+
+.btn-corner {
+  margin: 8px 6px;
+}
+
+.btn-lg {
+  padding: 12px 20px;
+  margin: 5px 15px;
+}
+
+.option-group {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.footer, .push {
+  width: 100%;
+  height: 40px;
+}
+
+.mauticform_wrapper {
+  margin-top: 2rem;
+}
+
+.mauticform-button-wrapper {
+  margin-top: 1rem;
+}
+
+.social-share {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.social-share a {
+  margin: .5rem;
+  text-decoration: none;
+}

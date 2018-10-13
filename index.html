@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>What statistical test should I use?</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-right">
+            <button class="btn btn-default btn-corner" type="submit" data-bind="click: startOver, visible: queryData().id > 0">Start over</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container main">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1 data-bind="text: queryData().text"></h1>
+            <h3 data-bind="text: queryData().subhead"></h3>
+            <div class="option-group" data-bind="foreach: queryData().answers">
+              <button class="btn btn-default btn-lg" type="submit" data-bind="click: $parent.goToTarget, text: text"></button>
+            </div>
+            <p data-bind="visible: queryData().answers.length == 0">Permalink: http://www.wfplsiu.com/#target=<span data-bind="text: queryData().id"></span><span data-bind="text: sfw() ? '&sfw=true' : ''"></span></p>
+            <button class="btn btn-default" type="submit" data-bind="click: stepBack, visible: navHistory().length > 1">Previous Step</button>
+            <div class="social-share" data-bind="visible: queryData().id == 0 || queryData().answers.length == 0">
+              <!-- Share this:
+              <a target="_blank" data-bind="attr: { href: 'http://www.reddit.com/submit?url=' + permalink() + '&title=What%20f&#35;&amp;king%20programming%20language%20should%20I%20use?' }"><span class="icon-reddit"></span></a>
+              <a target="_blank" data-bind="attr: { href: 'https://www.facebook.com/sharer/sharer.php?u=' + permalink() }"><span class="icon-facebook"></span></a>
+              <a target="_blank" data-bind="attr: { href: 'https://twitter.com/intent/tweet?text=What%20fucking%20programming%20language%20should%20I%20use?%3A%20' + permalink() }"><span class="icon-twitter"></span></a>
+              <a target="_blank" data-bind="attr: { href: 'https://plus.google.com/share?url=What%20fucking%20programming%20language%20should%20I%20use?%20' + permalink() }"><span class="icon-google-plus"></span></a>
+              <a target="_blank" data-bind="attr: { href: 'http://www.linkedin.com/shareArticle?mini=true&amp;url=' + permalink() + '&amp;title=What%20f#&amp;king%20programming%20language%20should%20I%20use?;summary=Your%20foul-mouthed%20technical%20advisor' }"><span class="icon-linkedin"></span></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span>Built by <a href="http://github.com/NicMoe">Nic Moe</a> |</span>
+        <a href="about.html">About</a>
+      </div>
+    </footer>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+    <script src="data.js?v=0.4.0"></script>
+
+  </body>
+</html>
