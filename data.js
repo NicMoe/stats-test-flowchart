@@ -17,7 +17,7 @@ var queries = [
       text: "1 variable",
       target: 2
     }, {
-      text: "2 variable",
+      text: "2 variables",
       target: 70
     }, {
       text: "More than 2 variables",
@@ -41,7 +41,7 @@ var queries = [
   {
     id: 3,
     text: "Which is most similar to the underlying distribution of the data?",
-    subhead: "Use the Shapiro-Wilk test to test for normality.",
+    subhead: "Test for normality with the Shapiro-Wilk test.",
     answers: [{
       text: "Normal distribution (or you can assume the central limit theorem holds)",
       target: 4
@@ -65,12 +65,12 @@ var queries = [
       target: 5
     }, {
       text: "Inference based on sample variance (s2)",
-      target: 10
+      target: 11
     }]
   },
   {
     id: 5,
-    text: "Is the population standard deviation (σ) known?",
+    text: "Do you know the standard deviation (σ) of the population?",
     answers: [{
       text: "Population standard deviation (σ) is known",
       target: 6
@@ -102,24 +102,13 @@ var queries = [
     subhead: "What is the likelihood a random sample of the population equal in size to your sample would vary from the population mean (μ) as much as does your sample mean (x̄)? Assumptions: one-sample problem with one, normally distributed variable of interest, concerning the sample mean (μ) but where the population standard deviation (σ) is unknown.",
     answers: [{
       text: "Who created the t-test?",
-      target: 87
+      target: 1001
     }]
   },
   {
     id: 9,
     text: "Multiple-regression methods",
     answers: []
-  },
-  {
-    id: 10,
-    text: "Is the inference concerning the sample variance (s2)?",
-    answers: [{
-      text: "Yes",
-      target: 11
-    }, {
-      text: "No",
-      target: null
-    }]
   },
   {
     id: 11,
@@ -197,8 +186,8 @@ var queries = [
   },
   {
     id: 22,
-    text: "Is the underlying distribution normal or can the central-limit theorem be assumed to hold?",
-    subhead: "Use the Shapiro-Wilk test",
+    text: "Is the underlying distribution normal or can the central limit theorem be assumed to hold?",
+    subhead: "Test for normality with the Shapiro-Wilk test.",
     answers: [{
       text: "Yes",
       target: 23
@@ -232,7 +221,7 @@ var queries = [
   {
     id: 25,
     text: "Are the variances of the two samples significantly different?",
-    subhead: "Use the F test.",
+    subhead: "Determine if variances differ with the F test.",
     answers: [{
       text: "Yes, different",
       target: 26
@@ -552,7 +541,7 @@ var queries = [
   {
     id: 64,
     text: "Is the underlying distribution normal or can the central limit theorem be assumed to hold?",
-    subhead: "Use Shapiro-Wilk to determine normality",
+    subhead: "Test for normality with the Shapiro-Wilk test.",
     answers: [{
       text: "Yes",
       target: 65
@@ -617,13 +606,13 @@ var queries = [
   },
   {
     id: 71,
-    text: "Are you interested in predicting one variable from another?",
+    text: "Are you interested in predicting one variable from another or in studying the correlation between two variables?",
     answers: [{
-      text: "Yes",
+      text: "Prediction",
       target: 72
     }, {
-      text: "No",
-      target: 73
+      text: "Studying correlation",
+      target: 74
     }]
   },
   {
@@ -632,20 +621,9 @@ var queries = [
     answers: []
   },
   {
-    id: 73,
-    text: "Are you interested in studying the correlation between two variables?",
-    answers: [{
-      text: "Yes",
-      target: 74
-    }, {
-      text: "No: not an option",
-      target: null
-    }]
-  },
-  {
     id: 74,
     text: "Are both variables normally distributed?",
-    subhead: "Use Shapiro-Wilk to determine.",
+    subhead: "Test for normality with the Shapiro-Wilk test.",
     answers: [{
       text: "Yes",
       target: 75
@@ -661,8 +639,17 @@ var queries = [
   },
   {
     id: 76,
-    text: "Rank-correlation methods",
-    answers: []
+    text: "Use rank-correlation methods. Are you trying to...?",
+    answers: [{
+      text: "Compare two groups",
+      target: 87
+    }, {
+      text: "Compare more than two groups",
+      target: 88
+    }, {
+      text: "Look for association between two groups",
+      target: 89
+    }]
   },
   {
     id: 77,
@@ -681,13 +668,13 @@ var queries = [
   {
     id: 78,
     text: "Is the outcome variable normal or can the central-limit theorem be assumed to hold?",
-    subhead: "Use the Shapiro-Wilk test",
+    subhead: "Test for normality with the Shapiro-Wilk test.",
     answers: [{
       text: "Yes",
       target: 79
     }, {
       text: "No",
-      target: 81
+      target: 88
     }]
   },
   {
@@ -704,11 +691,6 @@ var queries = [
   {
     id: 80,
     text: "One-way ANCOVA",
-    answers: []
-  },
-  {
-    id: 81,
-    text: "Conduct a nonparametric ANOVA with the Kruskal-Wallis test",
     answers: []
   },
   {
@@ -750,6 +732,35 @@ var queries = [
   },
   {
     id: 87,
+    text: "Mann-Whitney U Test",
+    subhead: "The Mann–Whitney U test is a nonparametric test of the null hypothesis that it is equally likely that a randomly selected value from one sample will be less than or greater than a randomly selected value from a second sample. - Wikipedia",
+    answers: []
+  },
+  {
+    id: 88,
+    text: "Conduct a nonparametric ANOVA with the Kruskal-Wallis H Test. What does the test conclude?",
+    subhead: "The Kruskal-Wallis H Test, also known as the one-way ANOVA on ranks, is a non-parametric method for testing whether samples originate from the same distribution. - Wikipedia",
+    answers: [{
+      text: "Rejects the null",
+      target: 90
+    }, {
+      text: "Fails to reject the null",
+      target: null
+    }]
+  },
+  {
+    id: 89,
+    text: "Spearman's Ranked Correlation",
+    answers: []
+  },
+  {
+    id: 90,
+    text: "Conover-Iman Post Hoc Test",
+    subtext: "If Conover-Iman is not an option, use Dunn's Test as an alternate post hoc test for Kruskal-Wallis Test.",
+    answers: []
+  },
+  {
+    id: 1001,
     text: "Who created the t-distribution and resultant t-tests?",
     subhead: "The t-statistic was introduced in 1908 by William Sealy Gosset, a chemist working for the Guinness brewery in Dublin, Ireland ('Student' was his pen name). Gosset had been hired due to Claude Guinness's policy of recruiting the best graduates from Oxford and Cambridge to apply biochemistry and statistics to Guinness's industrial processes. Gosset devised the t-test as an economical way to monitor the quality of stout. The Student's t-test work was submitted to and accepted in the journal Biometrika and published in 1908. Company policy at Guinness forbade its chemists from publishing their findings, so Gosset published his statistical work under the pseudonym 'Student'. Guinness had a policy of allowing technical staff leave for study (so-called 'study leave'), which Gosset used during the first two terms of the 1906–1907 academic year in Professor Karl Pearson's Biometric Laboratory at University College London. Gosset's identity was then known to fellow statisticians and to editor-in-chief Karl Pearson. - Wikipedia",
     answers: []
